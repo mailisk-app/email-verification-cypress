@@ -21,7 +21,7 @@
   "devDependencies": {
     "autoprefixer": "^10.4.12",
     "cypress": "^10.9.0",
-    "cypress-mailisk": "^1.0.0",
+    "cypress-mailisk": "^2.0.0",
     "eslint": "8.24.0",
     "eslint-config-next": "12.3.1",
     "postcss": "^8.4.17",

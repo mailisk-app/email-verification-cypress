@@ -26,7 +26,10 @@ describe("Test email verification", () => {
     // mailiskSearchInbox will automatically keep retrying until an email matching the prefix arrives
     // by default it also has a from_timestamp that prevents older emails from being returned by accident
     // find out more here: https://docs.mailisk.com/guides/cypress.html#usage
-    cy.mailiskSearchInbox(Cypress.env("MAILISK_NAMESPACE"), { to_addr_prefix: testEmailAddress }).then((response) => {
+    cy.mailiskSearchInbox(Cypress.env("MAILISK_NAMESPACE"), {
+      to_addr_prefix: testEmailAddress,
+      subject_includes: "verify",
+    }).then((response) => {
       const emails = response.data;
       const email = emails[0];
       // we know that the code is the only number in the email, so we easily filter it out
