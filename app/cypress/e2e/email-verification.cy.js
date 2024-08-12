@@ -3,6 +3,7 @@ describe("Test email verification", () => {
 
   it("Should sign up a new user", () => {
     cy.visit("http://localhost:3000/register");
+
     cy.get("#email").type(testEmailAddress);
     cy.get("#password").type("password");
     cy.get("form").submit();
@@ -11,6 +12,8 @@ describe("Test email verification", () => {
   });
 
   it("Should login as user", () => {
+    cy.visit("http://localhost:3000/");
+
     cy.get("#email").type(testEmailAddress);
     cy.get("#password").type("password");
     cy.get("form").submit();
@@ -49,6 +52,7 @@ describe("Test email verification", () => {
   it("Should login as user again", () => {
     // as a sanity check we want to ensure our email is verified, by logging in again
     cy.visit("http://localhost:3000/");
+
     cy.get("#email").type(testEmailAddress);
     cy.get("#password").type("password");
     cy.get("form").submit();
